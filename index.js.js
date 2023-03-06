@@ -10,4 +10,17 @@ myCiti.citiGriting()
 // внутри функции вызов метода Лог объекта консоль(вывод в консоль строки)
 // в итоге вызываем метод Ситигритинг
 // без слова функция сокращенный формат
-// ttt
+const person  = {
+    name: 'Bob',
+    age: 21
+}
+const person2 = person
+
+person2.age = 23
+person2.isAdult = true
+
+console.log(person.age)
+console.log(person.isAdult)
+// две переменные ссылаются на один объект в памяти
+// в переменных хранятся ссылки на объект
+// мутирование копий
