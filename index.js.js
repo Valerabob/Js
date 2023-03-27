@@ -1,10 +1,9 @@
+  
+const name = "Валера"
+const citi = "Москве"
 
-function myFn() {}
+const greeting = `меня зовут ${name} и я живу в ${citi}`
 
-myFn()
+console.log(greeting)
 
-const myB = myFn()
-
-console.log (myB)
-
-// самая короткая функция
+// Запись с использованием шаблонной строки
