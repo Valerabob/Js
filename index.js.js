@@ -1,19 +1,14 @@
 
-const myArray = [1,true,"Bogdan"]
+const age = 17
 
-myArray.pop()
+if(age>= 18) {
+    console.log('Is adult')
 
-console.log(myArray)
-// метод рор удаляет последний элемент массива,поэтому в скобках 
-//  не нужно указывать аогумент
+} if (age >=12 && age < 18) {
+    console.log('Is teenager')
 
-const removedEiement = myArray.pop()
-console.log(removedEiement)
-// так же метод рор(после удаления)возвращает удаленный элемент,его можно присвоить пере-ой
-// как на примере
+} if(age < 12) {
+    console.log('Is child')
+}
 
-console.log(myArray)
-// после удаления и возвращение в массиве только один элемент
-
-
-
+// та же инструкци переписана только с использованием  if
