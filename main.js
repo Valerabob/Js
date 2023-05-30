@@ -1,27 +1,31 @@
 
-const headings =  document.querySelectorAll('h1');
+const headings =  document.querySelector('h1');
 console.log(headings)
 
-// Этой командой мы ищем коллекции элементов(все которые есть на странице h1
-// Но объект .classList - не работает для коллекций! только для одиночных элементов!
+headings.classList.add('red-text');
+headings.classList.remove('red-text');
 
-for(let item of headings) {
-    item.classList.add('blue-text');
-}
-// Поэтому пере-ой headings присваиваются все h1
-// После мы обходим их все с помощью цикла for-of,где item - каждый отдельный h1
-// А потом каждому отдельному заголовку добовляем .classList. 
-// И далее класс из CSS ('blue-text')
+// добовление и удаление классов css .add - добовляет .remove - удаляет
+// //////////------------------////////////////////-------------////////////-----------
 
- const paragraphs = document.querySelectorAll('p');
- for(let p of paragraphs) {
-    p.classList.add('yellow-text');
- }
-// Тот же пример,только с коллекцией P - обзацев!
+headings.classList.toggle("green");
 
-paragraphs.forEach (function (p) {
-    p.classList.add('yellow-text');
-})
+// Этот метод - .toggle добовляет указанный класс CSS если его нет
+// Или убирает класс CSS если он есть
+// Еще этот метод возвращает(в консоли) true если добавил класс CSS или false если удалил.
 
-// Здесь мы обошли элементы (p) с помощью метода .forEach 
-// где (p) это каждый параграф. и далее мы уже добавили ему класс из CSS
+ const div = document.querySelector('div');
+ console.log(div);
+
+ div.classList.toggle('blue-text');
+//  -----------////////////////////---------------------////////////////////////////////
+  headings.classList.contains("green");
+  // Метод .contains проверяет есть ли тот или иной класс CSS и возвращает true если есть и false-если нет
+
+  if (headings.classList.contains("green")) {
+
+  } else {
+
+  }
+// А здесь мы эту проверку записываеи в условие if/else и делаем те или иные действия в зависимости 
+// от того что нам нужно !

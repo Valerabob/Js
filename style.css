@@ -15,4 +15,12 @@
 .yellow-text {
     color: yellow;
  }
+
+ .red-text {
+    color: red;
+ }
+
+ .number {
+    font-size: 30px;
+ }
     
