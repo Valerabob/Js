@@ -1,24 +1,33 @@
+// --------///////////// СОЗДАНИЕ ТОДО-ЛИСТА /////////////-----------
 
-const img = document.querySelector('#logo');
-img.setAttribute("width", '100');
-// опять уменьшил изображение
+const todoList = document.querySelector('#todo-list');
+const todoForm = document.querySelector('#todo-form');
+const todoInput= document.querySelector('#todo-input');
+// Находим эл-ты и записываем их в пре-ые
 
-const list = document.querySelector('#list');
-// Здесь мы находим эл-т по id и записываем его в переменную
+todoForm.addEventListener('submit', formHandler );
+// Слушаем событие у формы 'submit' фу-ию пишем отдельно и в ней...
 
-list.addEventListener('click', function(event) {
-    console.log(this);
-    console.log(event.target);
-})  
-// Здесь мы делаем прослушку через .addEventListener события 'click'
-// а используя (this) мы будем ссылаться на '#list' у
-// которого мы и слушаем это событие! и на все что находится в этом теге!
-// В итоге кликнув на любой объект в id list 
-//  в консоль выведется тег ul относящейся к '#list'
-// А если нам нужно подробно знать на какой тег мы кликаем(в #list может быть много тегов)
-// Мы используем Объект (event) - объявляя его параметром в функции
-// Объект (event) это всего лишь первый параметр в функции и там может быть любое название
-// любое слово станет (event) но называть его нужно так или промто "е"
-// Этот объект (event) содержит всю информацию о произошедшем событии(много свойсв)
-// а (event.target) св-во.target в консоль выведет тот html эл-т по которому мы кликнули
-// В отличае от (this) который "без подробностей" ссылается на '#list'
+function formHandler (event) {
+    event.preventDefault();
+
+    const taskText = todoInput.value;
+    const li = `<li>${taskText}</li>`;
+    todoList.insertAdjacentHTML("beforeend",li);
+    
+    todoInput.value = '';
+    todoInput.focus();
+}
+
+// ...обращаемся к (event) и с помощью метода .preventDefault()-отменяем стандартное поведение формы
+// Стандартное поведение формы ( по 'submit' ) отправка формы и обновление страницы
+// preventDefault()- отменяет стандартное поведение того события которое происходит
+// Далее мы получаем значение из импута (из поля ввода текста) и записываем в конст
+// После мы создаем тег li в ручную и его зна-ие (название задачи)приходит из пер-ой taskText
+// И после мы добовляем на страницу новый эл-т списка(li) используя метод insertAdjacentHTML 
+// у нас список записан в todoList.
+//  А после мы очишаем поле ввода текста устанавл знач todoInput = '';  (пустая строка)
+// И последнее фокус(курсор) что б остовался в поле ввода текста
+
+
+
