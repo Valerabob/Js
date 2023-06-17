@@ -23,5 +23,12 @@
  .number {
     font-size: 30px;
  }
+ .counter {
+    width: 100px;
+    height: 100px;
+    margin-left: 60px;
+    margin-top: 50px;
+    font-size: 40px;
+ }
 
  
